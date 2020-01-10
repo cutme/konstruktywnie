@@ -1,0 +1,83 @@
+.c-contactform {
+    max-width: 690px;
+    background-color: white;
+    box-shadow: 0 0 99px rgba(#474747, .15);
+    margin: 100px auto 0 auto;
+    padding: 55px;
+    
+    @media ( max-width: $smartphone + px ) {
+    	padding: 55px 40px;
+    }
+    
+    @media ( max-width: $smartphone_portrait + px ) {
+    	padding: 55px 20px;
+    }
+
+    .form-row {
+        @extend %flex;
+        @extend %flex-spacebetween;
+        
+        @media ( max-width: $smartphone + px ) {
+            flex-wrap: wrap;
+        }
+
+        .form-col {
+            width: 100%;
+
+            &:first-of-type {
+                
+                @media ( min-width: $smartphone + 1px ) {
+                    width: 190px;
+                }
+                
+                .form-group {
+                    &:last-of-type {
+                        margin-bottom: 20px;                        
+                    }
+                    
+                    
+                }
+            }
+            
+            &:last-of-type {
+                @extend %flex;
+                flex-direction: row;
+                align-items: flex-end;
+                
+                @media ( min-width: $smartphone + 1px ) {
+                    width: 290px;
+                }
+                
+                .form-group {
+                    &:last-of-type {
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+            
+            .form-group {
+                @media ( max-width: $smartphone + px ) {
+                    margin-bottom: 20px;
+                }
+            }        
+        }
+        
+        &--submit {
+            button {
+                margin: 60px 0 0 auto;
+                border-bottom: 1px solid $c-primary;
+                text-transform: uppercase;
+                padding: 0 0 4px 0;
+                font-size: rem(15);
+                
+                @media ( max-width: $smartphone + px ) {
+                	margin-top: 30px;
+                }
+            }
+        }
+    }
+    
+    .o-lead {
+        margin-bottom: 60px;
+    }
+}

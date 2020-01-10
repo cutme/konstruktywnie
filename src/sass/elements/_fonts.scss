@@ -1,0 +1,5 @@
+@include font-face-db( "icomoon", "icomoon", normal, normal);
+@include font-face-db( "Metropolis", "MetropolisLight", $light, normal);
+@include font-face-db( "Metropolis", "MetropolisLightItalic", $light, italic);
+@include font-face-db( "Metropolis", "MetropolisRegular", $regular, normal);
+@include font-face-db( "Metropolis", "MetropolisBold", $bold, normal);

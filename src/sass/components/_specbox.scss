@@ -1,0 +1,88 @@
+.c-specbox {
+    @extend %flex;
+    transform: translate3d(0, -50px, 0);
+    counter-reset: section;
+    
+    @media ( max-width: $tablet + px ) {
+        flex-wrap: wrap;
+    }
+    
+    &__item {
+        @extend %rel;
+        flex: 1;        
+        margin: 0 15px;
+        
+        @media ( max-width: $desktop + px ) {
+        	margin: 0 5px;
+        }
+        
+        @media ( max-width: $tablet + px ) {
+        	flex: calc(50% - 30px);
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            flex: 100%;
+            margin: 0;
+        }
+        
+        a {
+            display: block;
+            background-color: white;
+            padding: 35px 20px 20px 20px;
+            
+            @media ( max-width: $desktop + px ) {
+                padding: 25px 10px 10px 10px;
+            }
+            
+            @media ( min-width: $tablet + 1px ) {
+                min-height: 185px;
+            }
+            
+            &:hover {
+                .desktop & {
+                    background-color: $c-primary;
+                    color: white;
+                    
+                    .num {
+                        border-bottom-color: white;
+                        
+                        &:before {
+                            background-color: $c-primary;
+                        }
+                    }
+                }
+            }
+        }
+        
+        br {
+            @media ( max-width: $tablet + px ) {
+            	display: none;
+            }
+        }
+    }
+    
+    .num {
+        @extend %rel;
+        display: block;
+        width: 90px; height: 13px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid rgba(black, .5);
+
+        &:before {
+            @extend %abs-pseudo;
+            @extend %anim;
+            top: 0;
+            font-size: rem(12);
+            counter-increment: section;
+            content: counter(section) + ' ';
+            background-color: white;
+            padding-right: 10px;
+        }
+    }
+
+    p {
+        @extend %lead--4;
+        text-transform: uppercase;
+        opacity: .54;
+    }
+}

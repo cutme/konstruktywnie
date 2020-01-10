@@ -1,0 +1,61 @@
+.c-contact {
+    
+    address {
+        
+        h5 {
+            color: $c-black-03;
+        }
+
+        p {
+            margin-bottom: 1em;
+            color: $c-gray-03;
+        }
+    }
+    
+    .o-article {
+        p {
+            margin-bottom: 2em;
+        }
+    }
+    
+    .o-lead {
+        &--1 {
+            font-size: rem(55);
+            
+            @media ( max-width: $base + 80px ) {
+            	font-size: base(55);
+            }
+            
+            @media ( max-width: $tablet + px ) {
+            	font-size: rem(30);
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	font-size: rem(21);
+            }
+        }
+    }
+    
+    .o-social {
+        opacity: .83;
+    }
+    
+    .o-section {
+        padding-bottom: 100px;
+        
+        @media ( max-width: $smartphone + px ) {
+        	padding-bottom: 50px;
+        }
+    }
+    
+    
+    &__telmail {
+        p {
+            margin-bottom: .6em !important;
+            
+            @media ( min-width: $tablet + 1px ) {
+            	font-size: rem(25);
+            }
+        }
+    }
+}

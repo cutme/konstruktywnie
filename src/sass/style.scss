@@ -1,0 +1,53 @@
+@import 'settings/colors.scss';
+@import 'settings/global.scss';
+
+@import 'tools/clear';
+@import 'tools/functions';
+@import 'tools/mixins';
+//@import 'tools/blazy';
+//@import 'tools/custom-select';
+@import 'tools/glide';
+//@import 'tools/glightbox';
+
+@import 'generic/reset';
+@import 'generic/box-sizing';
+@import 'generic/screen-reader';
+
+@import 'elements/extends';
+@import 'elements/fonts';
+@import 'elements/form';
+@import 'elements/media';
+@import 'elements/page';
+@import 'elements/typography';
+
+@import 'objects/article';
+@import 'objects/box';
+@import 'objects/btn';
+@import 'objects/cols';
+@import 'objects/hamburger';
+@import 'objects/header';
+@import 'objects/icons';
+@import 'objects/lead';
+@import 'objects/logo';
+@import 'objects/more';
+@import 'objects/scrollbar';
+@import 'objects/section';
+@import 'objects/social';
+@import 'objects/wrap';
+
+@import 'components/bottom';
+@import 'components/contact';
+@import 'components/contactform';
+@import 'components/filters';
+@import 'components/filterspanel';
+@import 'components/footer';
+@import 'components/grid';
+@import 'components/homeslider';
+@import 'components/latest';
+@import 'components/nav';
+@import 'components/single';
+@import 'components/slider';
+@import 'components/specbox';
+@import 'components/top';
+
+@import 'trumps/trumps';

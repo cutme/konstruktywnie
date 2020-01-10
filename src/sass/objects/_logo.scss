@@ -1,0 +1,6 @@
+.o-logo {
+	@extend %rel;
+	@include z-index(logo);
+    display: block;
+    
+}

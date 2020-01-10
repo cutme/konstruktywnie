@@ -1,0 +1,8 @@
+.o-header {
+    margin-bottom: 60px;
+    text-align: center;
+    
+    @media ( max-width: $base + 80px ) {
+    	margin-bottom: base(60);
+    }
+}

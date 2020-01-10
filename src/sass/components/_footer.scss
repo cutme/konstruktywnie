@@ -1,0 +1,82 @@
+.c-footer {
+    background-color: rgba($c-gray-02, .09);
+    margin-top: 100px;
+    padding: 30px 0;
+    
+    address {
+
+        p {
+            font-size: rem(14);
+            color: $c-gray-03;
+            
+            &:not(:last-of-type) {
+                margin-bottom: .6em;
+            }
+            
+            strong {
+                color: $c-black-02;
+            }
+        }
+    }
+    
+    .o-cols {
+        @extend %flex-x;
+        @extend %flex-y;
+        @extend %rel;
+        
+        @media ( max-width: $smartphone + px ) {
+            padding-top: 120px;
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            display: block;
+        }
+
+        &__item {
+            
+            &:not(:nth-of-type(2)) {
+                @media ( min-width: $tablet + 1px ) {
+                    padding: 0 80px;            	
+                }
+                
+                @media ( max-width: $tablet + px ) {
+                    text-align: center;	
+                }
+            }
+            
+            &:nth-of-type(2) {
+                text-align: center;
+                
+                @media ( max-width: $smartphone + px ) {
+                    position: absolute; top: 0;
+                }
+            }
+            
+            @media ( max-width: $tablet + px ) {
+            	padding: 0 20px;
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+                width: 50%;
+                padding: 0 10px;
+            }
+            
+            @media ( max-width: $smartphone_portrait + px ) {
+                width: 100%;
+            }
+        }
+    }
+    
+    .o-logo {
+        display: inline-block;
+        margin-bottom: 10px;
+
+        img {
+            display: inline-block;
+        }
+    }
+    
+    .o-social {
+        color: rgba($c-gray-03, .7);
+    }
+}

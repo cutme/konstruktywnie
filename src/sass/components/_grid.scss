@@ -1,0 +1,38 @@
+.c-grid {
+    @extend %rel;
+    //overflow: hidden;
+
+    &__content {
+        @extend %flex;
+        @extend %flex-wrap;
+        margin: 0 grid(-20);
+    }
+    
+    &__item {
+        width: grid(350);
+        //margin-bottom: 100px;
+        padding: 0 grid(20);
+        
+        @media ( max-width: $tablet_portrait + px ) {
+            width: calc(100% / 3);
+        }
+
+        @media ( max-width: $smartphone + px ) {
+            width: calc(100% / 2);
+        }
+    }
+    
+    &.filters-on {
+        @media ( min-width: $tablet_portrait + 1px ) {
+        .c-grid {
+            &__content {
+                width: calc(100% - 25%);
+            }
+    
+            &__item {
+                    width: grid(350, 1050);
+            }
+        }
+        }
+    }
+}

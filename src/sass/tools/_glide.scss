@@ -1,0 +1,28 @@
+.glide {    
+    &__slides,
+    &__track {
+        height: 100%;
+    }
+    
+    &__bullet {
+        width: 13px; height: 13px;
+        border-radius: 50%;
+        border: 1px solid $c-gray-04;
+        margin: 0 10px;
+        padding: 0;
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            width: 10px; height: 10px;
+            margin: 0 5px;   
+        }
+        
+        &--active {
+            background-color: $c-primary;
+            border-color: $c-primary;
+        }
+    }
+    
+    &__bullets {
+        text-align: center;
+    }
+}

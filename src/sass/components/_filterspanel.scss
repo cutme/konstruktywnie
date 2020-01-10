@@ -1,0 +1,67 @@
+.c-filterspanel {
+    @extend %anim;
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+    color: $c-gray-04;
+    
+    @media ( min-width: $tablet_portrait + 1px ) {
+    	position: absolute;
+	    right: 0; top: 25px;
+        width: 25%;
+    }
+    
+    @media ( max-width: $tablet_portrait + px ) {
+    	display: none;
+    }
+    
+    input[type=checkbox] {
+        & + label {
+            span {
+                line-height: 1.2em;
+                text-transform: uppercase;
+            }
+        }
+        
+        &:checked {
+            & + label {
+                span {
+                    color: $c-primary;
+                }
+            }
+        }
+    }
+    
+    ul {
+        li {
+            margin-bottom: 20px;
+        }
+    }
+    
+
+    &__box {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 40px 30px;
+        
+        &--bg {
+            background-color: white;
+            box-shadow: 0 0 99px rgba(#474747, .15);
+        }
+    }
+    
+    .filters-on & {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        
+        @media ( max-width: $tablet_portrait + px ) {
+        	display: block
+        }
+    }
+    
+    .title {
+        margin-bottom: 2em;
+        text-transform: uppercase;
+        font-size: rem(13);
+    }
+    
+}

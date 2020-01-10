@@ -1,0 +1,35 @@
+.o-lead {
+
+    &--0 {
+        font-size: rem(49);
+        
+        @media ( max-width: $base + 80px ) {
+        	font-size: base(49);
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+        	font-size: rem(24);
+        }
+
+    }
+    
+    &--1 {
+        @extend %lead--1;
+    }
+    
+    &--2 {
+        @extend %lead--2;
+    }
+    
+    &--3 {
+        @extend %lead--3;
+    }
+    
+    &--4 {
+        @extend %lead--4;
+    }
+    
+    &--5 {
+        @extend %lead--5;
+    }
+}

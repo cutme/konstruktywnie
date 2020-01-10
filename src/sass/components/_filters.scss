@@ -1,0 +1,18 @@
+.c-filters {
+    &__trigger {
+        text-align: right;
+        text-transform: uppercase;
+        font-size: rem(12);
+        color: $c-gray-08;
+        
+        span {
+            display: inline-block;
+            margin-bottom: 8px;
+            cursor: pointer;
+
+            &:hover {
+                color: $c-primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.o-scrollbar {
+	@extend %abs;
+	@extend %anim;
+	left: 0;
+	bottom: 0;
+	width: 0; height: 1px;
+	background-color: $c-primary;
+	opacity: 0;
+	
+	.single-page & {
+		opacity: 1;
+	}
+}

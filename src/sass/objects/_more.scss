@@ -1,0 +1,19 @@
+.o-more {
+    text-align: center;
+
+    a {
+        padding-bottom: 5px;
+        text-transform: uppercase;
+        font-size: rem(15);
+        border-bottom: 1px solid $c-primary;
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+        	font-size: rem(12);
+        }
+
+        
+        &:hover {
+            color: $c-primary;
+        }
+    }
+}

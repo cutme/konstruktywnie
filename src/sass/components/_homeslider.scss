@@ -1,0 +1,62 @@
+.c-homeslider {
+    height: calc(100vh + 150px);
+    max-height: 900px;
+    background: {
+        image: url(../img/assets/top.jpg);
+        repeat: no-repeat;
+        position: right center;
+        size: cover;
+    }
+    
+    @media ( max-width: $tablet + px ) {
+    	height: 600px;
+    }
+    
+    @media ( max-width: $smartphone + px ) {
+        height: 400px;
+    }
+    
+    &__article {
+        .title {
+            line-height: 1.1em;
+            font-size: rem(74);
+            
+            @media ( max-width: $base + 80px ) {
+            	font-size: base(74);
+            }
+            
+            @media ( max-width: $tablet + px ) {
+            	font-size: rem(40);
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	font-size: rem(30);
+            }            
+        }
+        
+        p {
+            @extend %lead--4;
+            max-width: 420px;
+            opacity: .98;            
+        }
+
+        span {
+        
+            &:first-of-type {
+                display: block;
+                color: $c-primary;        
+            }
+            
+            &:last-of-type {
+                @extend %underline;
+            }
+        }
+    }
+    
+    .o-wrap {
+        @extend %flex;
+        @extend %flex-y;
+        justify-content: flex-end;
+        height: 100%;
+    }
+}

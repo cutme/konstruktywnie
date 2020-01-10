@@ -1,0 +1,10 @@
+.c-single {
+    overflow: hidden;
+     
+    .o-lead {
+        &--5 {
+            text-transform: uppercase;
+            opacity: .5;
+        }
+    }
+}

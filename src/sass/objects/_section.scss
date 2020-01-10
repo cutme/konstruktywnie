@@ -1,0 +1,25 @@
+.o-section {
+    &--bigTopPadding {
+        padding-top: 240px;
+        
+        @media ( max-width: $base + 80px ) {
+        	padding-top: base(240);
+        }
+        
+        @media ( max-width: $tablet + px ) {
+        	padding-top: 140px;
+        }
+    }
+    
+    &--topPadding {
+        padding: 200px 0 0 0;
+        
+        @media ( max-width: $base + 80px ) {
+        	padding-top: base(200);
+        }
+        
+        @media ( max-width: $tablet + px ) {
+        	padding-top: 140px;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+body {
+	@include antialias;
+	line-height: 1.6;
+	text-rendering: optimizeSpeed;
+	font: {
+		family: $text;
+		size: #{$base-font-size}px;
+		weight: $regular;
+	}
+	color: $c-black-01;
+	
+	@media ( max-width: $smartphone + px ) {
+		font-size: rem(14);
+	}
+}
+
+a {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	
+	.is-loaded & {
+        @extend %anim;
+    }
+	
+	&:hover,
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+input {
+    font-size: #{$base-font-size}px;
+}
+
+strong {
+    font-weight: $bold;
+}
+
+::selection {
+	background-color: var(--primary-color);
+	color: white;
+}
+
+hr {
+    background-color: $c-primary;
+    width: 256px;
+    height: 1px;
+    margin: 60px auto;
+    border: none;
+    
+    @media ( max-width: $tablet + px ) {
+    	margin: 30px auto;
+    }
+}
+
+u {
+    text-decoration-color: var(--primary-color);
+}
+
+
