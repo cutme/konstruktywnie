@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded',function() {
             }
             
             
-        }, 1)
+        }, 10)
     };
    
    

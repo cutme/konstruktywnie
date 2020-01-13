@@ -1,10 +1,14 @@
 .o-box {
+    @extend %anim;
     max-width: 320px;
-    margin-bottom: 100px;
+    //margin-bottom: 100px;
     text-align: center;
     
+    height: 100%;
+    padding-bottom: 50px;
+
     @media ( max-width: $base + px ) {
-    	margin-bottom:  ase(100);
+    	//margin-bottom:  ase(100);
     }
     
     .photo {
@@ -35,6 +39,8 @@
     }
     
     &:hover {
+        box-shadow: 0 0 99px rgba(#474747, .15);
+        
         .photo {
             img {
                 transform: scale3d(1.1, 1.1, 1.1);

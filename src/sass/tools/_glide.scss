@@ -4,6 +4,12 @@
         height: 100%;
     }
     
+    &__slide {
+        height: auto !important;
+        
+        
+    }
+    
     &__bullet {
         width: 13px; height: 13px;
         border-radius: 50%;

@@ -34,20 +34,22 @@
                 	font-size: rem(16);
                 }
                 
-                &:before, &:after {
+                &:after {
                     @extend %abs-pseudo;
                     @extend %anim;
                     width: calc(100% - 30px; height: 1px;
-                    background-color: $c-black-01;
+                    background-color: $c-gray-02;
                     opacity: 0;
                 }
                 
+/*
                 &:before {
                     left: 15px;
                     top: 0;
                     transform: translate3d(100%, 0%, 0);
                     
                 }
+*/
                 
                 &:after {
                     top: 100%;

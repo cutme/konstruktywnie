@@ -1,6 +1,9 @@
 .c-latest {
+    width: 1600px;
+    margin: 0 auto;
     padding: 110px 0 80px 0;
     padding-bottom: 0;
+    
     
     @media ( max-width: $base + 80px ) {
         padding: base(110) 0 base(80) 0;
@@ -13,12 +16,34 @@
         }
     }
     
+    .o-header {
+        margin-bottom: 0;
+        
+        @media ( max-width: $base + 80px ) {
+        	margin-bottom: 0;
+        }
+    }
+
+    
     .o-lead {
         &--2 {
             @media ( max-width: $smartphone_portrait + px ) {
             	font-size: rem(14);
             }
 
+        }
+    }
+    
+    .glide {
+        &__slide {
+            & > a {
+                display: block;
+                height: 100%;
+            }
+        }
+        
+        &__slides {
+            padding: 70px 0;
         }
     }
 }

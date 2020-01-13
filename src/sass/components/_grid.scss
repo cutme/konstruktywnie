@@ -10,7 +10,7 @@
     
     &__item {
         width: grid(350);
-        //margin-bottom: 100px;
+        margin-bottom: 50px;
         padding: 0 grid(20);
         
         @media ( max-width: $tablet_portrait + px ) {

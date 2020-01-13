@@ -6666,7 +6666,7 @@ document.addEventListener('DOMContentLoaded', function () {
       for (var i = 0; i < bullets.length; i++) {
         bullets[i].addEventListener('click', action);
       }
-    }, 1);
+    }, 10);
   };
 
   latest ? latestCarousel() : false;
