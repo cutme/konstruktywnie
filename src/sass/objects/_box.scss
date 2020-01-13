@@ -1,16 +1,10 @@
 .o-box {
     @extend %anim;
     max-width: 320px;
-    //margin-bottom: 100px;
     text-align: center;
-    
     height: 100%;
     padding-bottom: 50px;
 
-    @media ( max-width: $base + px ) {
-    	//margin-bottom:  ase(100);
-    }
-    
     .photo {
         margin-bottom: 45px;
         overflow: hidden;
@@ -39,7 +33,13 @@
     }
     
     &:hover {
-        box-shadow: 0 0 99px rgba(#474747, .15);
+        .desktop & {
+            box-shadow: 0 0 99px rgba(#474747, .15);
+            
+            @media ( max-width: $tablet_portrait + px ) {
+            	box-shadow: 0 0 45px rgba(#474747, .15);
+            }
+        }
         
         .photo {
             img {

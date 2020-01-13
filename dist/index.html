@@ -47,14 +47,17 @@
                     </li>
                 </ul>
                 
+                
                 <ul class="c-nav__social">
                     <li>
                         <a href="#" class="icon-linkedin"></a>
                     </li>
-                    <li>
+                    <li class="js-search">
                         <a href="#" class="icon-search"></a>
                     </li>
                 </ul>
+
+
             </nav>
 
 
@@ -330,12 +333,20 @@
                             </a> 
                         </li>    		                
 					</ul>
+					
+					
+					<div class="glide__arrows" data-glide-el="controls">
+	                    <button class="glide__arrow glide__arrow--left icon-arrow-left" data-glide-dir="|<"></button>				                    
+	                    <button class="glide__arrow glide__arrow--right icon-arrow-left" data-glide-dir="|>"></button>
+	                </div>
 	       
+<!--
                     <div class="glide__bullets" data-glide-el="controls[nav]" style="display: none">
                         <button class="glide__bullet" data-glide-dir="=0"></button>
                         <button class="glide__bullet" data-glide-dir="=4"></button>
                         <button class="glide__bullet" data-glide-dir="|>"></button>
                     </div>
+-->
 				</div>
             </div>
 
@@ -402,8 +413,23 @@
     </div>
 
 
-
     
+    <div class="o-overlay" id="search">
+        <div class="o-overlay__inside">
+            <div class="o-wrap">
+                <form action="#" class="c-searchform">
+                    <input type="text" class="form-field" placeholder="Jakiego produktu szukasz?"> 
+
+                    <button type="submit" class="o-btn o-btn--minor">
+                        <i class="icon-search"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="o-overlay__close js-close"></div>
+        </div>
+    </div>
+
     
 <script src="js/app.js"></script></body>
 </html>

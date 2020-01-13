@@ -26,11 +26,11 @@
             
             <nav class="c-nav js-nav">
                 <ul class="c-nav__menu js-menu">
-                    <li class="current-menu-item">
+                    <li>
                         <a href="index.html">Strona główna</a>
                     </li>
                     
-                    <li>
+                    <li class="current-menu-item">
                         <a href="baza-wiedzy.html">Baza wiedzy</a>
                     </li>
                     
@@ -47,14 +47,17 @@
                     </li>
                 </ul>
                 
+                
                 <ul class="c-nav__social">
                     <li>
                         <a href="#" class="icon-linkedin"></a>
                     </li>
-                    <li>
+                    <li class="js-search">
                         <a href="#" class="icon-search"></a>
                     </li>
                 </ul>
+
+
             </nav>
 
 
@@ -391,6 +394,22 @@
     </div>
 
 
+    
+    <div class="o-overlay" id="search">
+        <div class="o-overlay__inside">
+            <div class="o-wrap">
+                <form action="#" class="c-searchform">
+                    <input type="text" class="form-field" placeholder="Jakiego produktu szukasz?"> 
+
+                    <button type="submit" class="o-btn o-btn--minor">
+                        <i class="icon-search"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="o-overlay__close js-close"></div>
+        </div>
+    </div>
 
     
     

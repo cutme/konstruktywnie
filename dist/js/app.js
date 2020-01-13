@@ -2751,7 +2751,9 @@ __webpack_require__("./src/js/scrollprogress.js");
 
 __webpack_require__("./src/js/carousels.js");
 
-__webpack_require__("./src/js/nav.js"); //require('./js/mobile-detach.js');
+__webpack_require__("./src/js/nav.js");
+
+__webpack_require__("./src/js/search.js"); //require('./js/mobile-detach.js');
 //require('./img/photos/l-thumb-0.jpg');
 
 /***/ }),
@@ -6666,7 +6668,7 @@ document.addEventListener('DOMContentLoaded', function () {
       for (var i = 0; i < bullets.length; i++) {
         bullets[i].addEventListener('click', action);
       }
-    }, 10);
+    }, 100);
   };
 
   latest ? latestCarousel() : false;
@@ -7221,6 +7223,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
   init();
   el ? window.addEventListener('scroll', init) : false;
+}, false);
+
+/***/ }),
+
+/***/ "./src/js/search.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var bodyScrollLock = __webpack_require__("./node_modules/body-scroll-lock/lib/bodyScrollLock.min.js");
+
+var disableBodyScroll = bodyScrollLock.disableBodyScroll;
+var enableBodyScroll = bodyScrollLock.enableBodyScroll;
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementsByClassName('js-search')[0];
+
+  var init = function init() {
+    var overlay = document.getElementById('search'),
+        close = document.getElementsByClassName('js-close')[0];
+    var outside;
+
+    var showSearch = function showSearch(e) {
+      disableBodyScroll();
+      overlay.classList.add('is-active');
+      setTimeout(function () {
+        overlay.classList.add('is-visible');
+      }, 1);
+      e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
+      outside = document.addEventListener('click', clickOutside);
+    };
+
+    var hideSearch = function hideSearch() {
+      enableBodyScroll();
+      overlay.classList.remove('is-active');
+      overlay.classList.remove('is-visible');
+      document.removeEventListener('click', clickOutside);
+    };
+
+    var clickOutside = function clickOutside(e) {
+      if (e.target.classList.contains('o-wrap')) {
+        hideSearch();
+      } else {
+        return;
+      }
+    };
+
+    el.addEventListener('click', showSearch);
+    close.addEventListener('click', hideSearch); // Hide menu on ESC
+
+    document.addEventListener('keydown', function (evt) {
+      // evt = evt || window.event;
+      var isEscape = false;
+
+      if ("key" in evt) {
+        isEscape = evt.key == "Escape" || evt.key == "Esc";
+      } else {
+        isEscape = evt.keyCode == 27;
+      }
+
+      if (isEscape) {
+        hideSearch();
+      }
+    });
+  };
+
+  el ? init() : false;
 }, false);
 
 /***/ }),

@@ -1,0 +1,73 @@
+.c-searchform {
+    @extend %flex;
+    width: 600px; min-height: 50px;
+    background-color: white;
+    box-shadow: 0 0 70px rgba(black, .4);
+    opacity: 0;
+    transition: all 250ms ease-out;
+    transition-delay: 500ms;
+    transform: translate3d(0, 25px, 0);
+    
+    .is-visible & {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    
+    @media screen and ( max-width: 640px ) {
+        width: 100%;
+    }
+    
+    @media screen and ( min-width: $smartphone + 1px ) {
+        min-height: 60px;
+    }
+    
+    @media screen and ( max-width: $smartphone  + px) {
+        flex-wrap: wrap;
+    }
+
+    input[type=text] {
+        @extend %rel;
+        height: 50px;
+        border: none;
+        padding: 0 20px;
+        
+        @media screen and ( min-width: $smartphone + 1px ) {
+            flex: 1;
+            height: 60px;
+            border-right: 1px solid $c-gray-01;
+        }
+        
+        @media screen and ( max-width: $smartphone + px ) {
+            height: 50px;
+            border-bottom: 1px solid $c-gray-01;
+        }
+    }
+    
+    .o-btn {
+        min-width: 0;
+        width: 60px; height: 50px;
+        background-color: var(--primary-color);
+        padding: 0;
+        color: white;
+        
+        &:after {
+            display: none;
+        }
+        
+        @media ( min-width: $smartphone + 1px ) {
+            height: 60px;
+        }
+        
+         @media ( max-width: $smartphone +1px ) {
+            width: 100%;
+        }
+        
+        [class^="icon-"] {
+            font-size: rem(26);
+        }
+        
+        &:hover {
+            background-color: darken($c-primary, 10%);
+        }
+    }
+}
