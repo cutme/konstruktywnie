@@ -88,14 +88,14 @@
                 </div>
             </div>
             
-            <div class="c-filterspanel">
-                
+            
+            <div class="c-filterspanel">    
                 <div class="c-filterspanel__box c-filterspanel__box--bg">
                     <h4 class="title">Wybierz specjalizację</h4>
                     
-                    <ul>
+                    <ul data-filter-group>
                         <li>
-                            <input type="checkbox" checked="checked" id="spec-0">
+                            <input type="checkbox" id="spec-0" value="" class="js-toggle">
                             <label for="spec-0">
                             	<i></i>
                             	<span>Pokaż wszystkie</span>
@@ -103,7 +103,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="spec-1">
+                            <input type="checkbox" name="filter" id="spec-1" value=".spec-1">
                             <label for="spec-1">
                             	<i></i>
                             	<span>Prawo Budowlane</span>
@@ -111,7 +111,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="spec-2">
+                            <input type="checkbox" name="filter" id="spec-2" value=".spec-2">
                             <label for="spec-2">
                             	<i></i>
                             	<span>Planowanie przestrzenne </span>
@@ -119,7 +119,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="spec-3">
+                            <input type="checkbox" name="filter" id="spec-3" value=".spec-3">
                             <label for="spec-3">
                             	<i></i>
                             	<span>Umowy w procesie inwestycyjnym</span>
@@ -127,7 +127,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="spec-4">
+                            <input type="checkbox" name="filter" id="spec-4" value=".spec-4">
                             <label for="spec-4">
                             	<i></i>
                             	<span>Zamówienia publiczne</span>
@@ -135,7 +135,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="spec-5">
+                            <input type="checkbox" name="filter" id="spec-5" value=".spec-5">
                             <label for="spec-5">
                             	<i></i>
                             	<span>Kontrola procesu inwestycyjnego</span>
@@ -143,7 +143,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="spec-6">
+                            <input type="checkbox" name="filter" id="spec-6" value=".spec-6">
                             <label for="spec-6">
                             	<i></i>
                             	<span>Warunki kontraktowe FIDIC</span>
@@ -151,7 +151,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="spec-7">
+                            <input type="checkbox" name="filter" id="spec-7" value=".spec-7">
                             <label for="spec-7">
                             	<i></i>
                             	<span>Postępowanie administracyjne</span>
@@ -163,9 +163,9 @@
                 <div class="c-filterspanel__box">
                     <h4 class="title">Wybierz kategorię wpisów</h4>
                     
-                    <ul>
+                    <ul data-filter-group>
                         <li>
-                            <input type="checkbox" checked="checked" id="cat-0">
+                            <input type="checkbox" id="cat-0">
                             <label for="cat-0">
                             	<i></i>
                             	<span>Pokaż wszystkie</span>
@@ -173,7 +173,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="cat-1">
+                            <input type="checkbox" id="cat-1" value=".cat-1">
                             <label for="cat-1">
                             	<i></i>
                             	<span>Studia przypadkow</span>
@@ -181,7 +181,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="cat-2">
+                            <input type="checkbox" id="cat-2" value=".cat-2">
                             <label for="cat-2">
                             	<i></i>
                             	<span>Jakich błędów unikać?</span>
@@ -189,7 +189,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="cat-3">
+                            <input type="checkbox" id="cat-3" value=".cat-3">
                             <label for="cat-3">
                             	<i></i>
                             	<span>Problemy praktyczne</span>
@@ -197,7 +197,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="cat-4">
+                            <input type="checkbox" id="cat-4" value=".cat-4">
                             <label for="cat-4">
                             	<i></i>
                             	<span>Krótkie poradniki</span>
@@ -205,7 +205,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="cat-5">
+                            <input type="checkbox" id="cat-5" value=".cat-5">
                             <label for="cat-5">
                             	<i></i>
                             	<span>Komentarze do orzeczeń</span>
@@ -213,7 +213,7 @@
                         </li>
                         
                         <li>
-                            <input type="checkbox" id="cat-6">
+                            <input type="checkbox" id="cat-6" value=".cat-6">
                             <label for="cat-6">
                             	<i></i>
                             	<span>Zmiany w przepisach</span>
@@ -223,13 +223,14 @@
                 </div>
 
             </div>
+
             
             
-            <div class="c-grid__content js-gridContent">
-                <a href="wpis.html" class="c-grid__item">
+            <div class="c-grid__content js-mix">
+                <a href="wpis.html" class="c-grid__item mix spec-1 cat-1">
                     <figure class="o-box">
                         <div class="photo">
-                            <img src="img/photos/thumb-01.jpg" alt="" width="320" height="320">
+                            <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/photos/thumb-01.jpg" alt="" width="320" height="320">
                         </div>
                         
                         <figcaption>
@@ -239,10 +240,10 @@
                     </figure>
                 </a>
                 
-                <a href="wpis.html" class="c-grid__item">
+                <a href="wpis.html" class="c-grid__item mix spec-1 cat-1">
                     <figure class="o-box">
                         <div class="photo">
-                            <img src="img/photos/thumb-02.jpg" alt="" width="320" height="320">
+                            <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/photos/thumb-02.jpg" alt="" width="320" height="320">
                         </div>
                         
                         <figcaption>
@@ -252,10 +253,10 @@
                     </figure>
                 </a>
                    
-                <a href="wpis.html" class="c-grid__item">
+                <a href="wpis.html" class="c-grid__item mix spec-2 cat-1">
                     <figure class="o-box">
                         <div class="photo">
-                            <img src="img/photos/thumb-03.jpg" alt="" width="320" height="320">
+                            <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/photos/thumb-03.jpg" alt="" width="320" height="320">
                         </div>
                         
                         <figcaption>
@@ -265,10 +266,10 @@
                     </figure>
                 </a>
                 
-                <a href="wpis.html" class="c-grid__item">
+                <a href="wpis.html" class="c-grid__item mix spec-3 cat-4">
                     <figure class="o-box">
                         <div class="photo">
-                            <img src="img/photos/thumb-04.jpg" alt="" width="320" height="320">
+                            <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/photos/thumb-04.jpg" alt="" width="320" height="320">
                         </div>
                         
                         <figcaption>
@@ -279,11 +280,11 @@
                 </a>
                 
                 
-                
-                <a href="wpis.html" class="c-grid__item">
+
+                <a href="wpis.html" class="c-grid__item mix spec-4 cat-2">
                     <figure class="o-box">
                         <div class="photo">
-                            <img src="img/photos/thumb-05.jpg" alt="" width="320" height="320">
+                            <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/photos/thumb-05.jpg" alt="" width="320" height="320">
                         </div>
                         
                         <figcaption>
@@ -293,10 +294,10 @@
                     </figure>
                 </a>
                 
-                <a href="wpis.html" class="c-grid__item">
+                <a href="wpis.html" class="c-grid__item mix spec-1 cat-5">
                     <figure class="o-box">
                         <div class="photo">
-                            <img src="img/photos/thumb-06.jpg" alt="" width="320" height="320">
+                            <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/photos/thumb-06.jpg" alt="" width="320" height="320">
                         </div>
                         
                         <figcaption>
@@ -306,10 +307,10 @@
                     </figure>
                 </a>
                    
-                <a href="wpis.html" class="c-grid__item">
+                <a href="wpis.html" class="c-grid__item mix spec-3 cat-3">
                     <figure class="o-box">
                         <div class="photo">
-                            <img src="img/photos/thumb-07.jpg" alt="" width="320" height="320">
+                            <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/photos/thumb-07.jpg" alt="" width="320" height="320">
                         </div>
                         
                         <figcaption>
@@ -319,10 +320,10 @@
                     </figure>
                 </a>
                 
-                <a href="wpis.html" class="c-grid__item">
+                <a href="wpis.html" class="c-grid__item mix spec-4 cat-2">
                     <figure class="o-box">
                         <div class="photo">
-                            <img src="img/photos/thumb-08.jpg" alt="" width="320" height="320">
+                            <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/photos/thumb-08.jpg" alt="" width="320" height="320">
                         </div>
                         
                         <figcaption>
@@ -331,12 +332,15 @@
                         </figcaption>
                     </figure>
                 </a>
+
             </div>
         </div>
+<!--
         
         <div class="o-more">
             <a href="baza-wiedzy.html">Czytaj więcej</a>
         </div>
+-->
     </div>
 
     

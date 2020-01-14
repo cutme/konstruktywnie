@@ -1,5 +1,7 @@
 const { detect } = require('detect-browser');
 const browser = detect();
+import Blazy from 'blazy';
+
 
 document.addEventListener('DOMContentLoaded',function() {
 
@@ -28,6 +30,20 @@ document.addEventListener('DOMContentLoaded',function() {
         // Home Parallax
         
         document.getElementsByClassName('js-homeslider')[0] ? window.parallax() : false;
+        
+        
+
+        // Blazy
+        
+        window.bLazy = new Blazy({
+            success: function(el){
+
+                let item = el.parentNode.parentNode.parentNode;
+                
+                item.classList.add('is-visible');
+            }
+        });
+            
     };
     
     

@@ -2,6 +2,7 @@ import css from './sass/style.scss';
 
 require('./js/polyfills.js');
 require('./js/init.js');
+require('./js/blazy.js');
 require('./js/filters.js');
 require('./js/helpers.js');
 require('./js/ismobile.js');

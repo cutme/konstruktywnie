@@ -1975,6 +1975,11 @@ bl@^1.0.0:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
 
+blazy@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/blazy/-/blazy-1.8.2.tgz#50dfd638baaf9003efd6eb3a836aca54184ab6da"
+  integrity sha1-UN/WOLqvkAPv1us6g2rKVBhKtto=
+
 block-stream@*:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"

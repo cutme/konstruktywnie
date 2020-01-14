@@ -9,9 +9,7 @@ document.addEventListener('DOMContentLoaded',function() {
         for (let i = 0; i < anims.length; i++) {
 
             if (cutme.Helpers.isInView(anims[i])) {
-                anims[i].classList.add('anim--visible');
-                
-                
+                anims[i].classList.add('anim--visible');                
             }
 
             const inview = InView(anims[i], function(isInView, data) {
