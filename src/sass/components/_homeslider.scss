@@ -1,7 +1,7 @@
 .c-homeslider {
     height: 100vh;
     //height: calc(100vh + 150px);
-    max-height: 900px;
+    //max-height: 900px;
     background: {
         image: url($path_img + '/assets/top.jpg');
         repeat: no-repeat;
@@ -82,7 +82,7 @@
         .picture {
             @extend %abs;
             width: 100%;
-            left: 0; right: 0;  bottom: 0;
+            left: 0; bottom: 0;
             height: auto;
             min-height: 100vh;
             background: {
