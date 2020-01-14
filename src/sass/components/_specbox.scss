@@ -1,6 +1,6 @@
 .c-specbox {
     @extend %flex;
-    transform: translate3d(0, -50px, 0);
+    //transform: translate3d(0, -50px, 0);
     counter-reset: section;
     
     @media ( max-width: $tablet + px ) {

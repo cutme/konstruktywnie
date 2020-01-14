@@ -6,7 +6,7 @@ require('./js/filters.js');
 require('./js/helpers.js');
 require('./js/ismobile.js');
 require('./js/inview.js');
-//require('./js/fixel.js');
+require('./js/parallax.js');
 require('./js/scrollpos.js');
 require('./js/scrollprogress.js');
 require('./js/carousels.js');

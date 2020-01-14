@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded',function() {
             window.animsInit();
         }, 100);
         
+        
+        // Home Parallax
+        
+        document.getElementsByClassName('js-homeslider')[0] ? window.parallax() : false;
     };
     
     

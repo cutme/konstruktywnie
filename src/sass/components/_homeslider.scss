@@ -2,12 +2,17 @@
     height: calc(100vh + 150px);
     max-height: 900px;
     background: {
-        image: url(../img/assets/top.jpg);
+        image: url($path_img + '/assets/top.jpg');
         repeat: no-repeat;
         position: right center;
-        size: cover;
+        //size: cover;
     }
     
+    @media ( max-width: $smartphone + px ) {
+        background-position: 80% center;
+    }
+    
+/*
     @media ( max-width: $tablet + px ) {
     	height: 600px;
     }
@@ -15,8 +20,10 @@
     @media ( max-width: $smartphone + px ) {
         height: 400px;
     }
+*/
     
     &__article {
+
         .title {
             line-height: 1.1em;
             font-size: rem(74);
@@ -56,7 +63,28 @@
     .o-wrap {
         @extend %flex;
         @extend %flex-y;
+        @extend %rel;
+        z-index: 10;
         justify-content: flex-end;
         height: 100%;
+    }
+    
+    &__secondary {
+        @extend %abs;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        background: {
+            image: url($path_img + '/assets/top2.jpg');
+            repeat: no-repeat;
+            position: right center;
+            //size: cover;
+        }
+        overflow: hidden;
+        
+        @media ( max-width: $smartphone + px ) {
+            background-position: 80% center;
+        }
     }
 }
