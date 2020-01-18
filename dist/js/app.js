@@ -28798,9 +28798,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var scene = new ScrollMagic_default.a.Scene({
       duration: el.clientHeight,
       triggerHook: 0
-    }).setTween(tween).setPin(".js-homeslider", {
-      pushFollowers: false
-    }).addTo(controller);
+    }).setTween(tween).setPin(".js-homeslider").addTo(controller).on("end", function (e) {
+      document.getElementsByClassName('js-specbox')[0].classList.remove('is-fixed');
+    }).on("progress", function (e) {
+      document.getElementsByClassName('js-specbox')[0].classList.add('is-fixed');
+    });
     /*
             window.onresize = function() {
                 console.log('z');

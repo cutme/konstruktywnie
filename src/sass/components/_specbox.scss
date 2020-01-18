@@ -1,15 +1,27 @@
 .c-specbox {
     @extend %flex;
     position: relative; z-index: 15;
-    transform: translate3d(0, -50px, 0);
-    //margin-top: -50px;
-    
+    margin-bottom: -100px;
+    transform: translate3d(0, -85px, 0);
     counter-reset: section;
-    //align-self: flex-end;
     
-    @media ( min-width: $tablet + 1px ) {
-    	//transform: translate3d(0, 50%, 0);
+    
+    
+    &.is-fixed {
+        
+        .desktop & {
+        position: fixed;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        z-index: 10;
+        transform: translate3d(0, -185px, 0);
+        
+      }
     }
+    
+    
+    
 
     @media ( max-width: $tablet + px ) {
         flex-wrap: wrap;
