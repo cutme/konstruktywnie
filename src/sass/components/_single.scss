@@ -1,5 +1,9 @@
 .c-single {
     overflow: hidden;
+    
+    .error404 & {
+        min-height: 64vh;
+    }
      
     .o-lead {
         &--5 {

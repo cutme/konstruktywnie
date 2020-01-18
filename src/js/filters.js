@@ -10,17 +10,60 @@ document.addEventListener('DOMContentLoaded',function() {
     
     const mix = function() {
         
-        const mixer = mixitup('.js-mix', {
-            multifilter: {
-                enable: true
-            }
-        });
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const spec = urlParams.get('spec')
+        const filtersTrigger = document.getElementsByClassName('js-filtersTrigger')[0];
+        const filtersPanel = document.getElementsByClassName('js-filterspanel')[0];
+
+        if (spec) {
+            let initialFilter = '.' + spec;
+            
+            let mixer = mixitup('.js-mix', {
+                multifilter: {
+                    enable: true
+                },
+                load: {
+                    filter: initialFilter
+                },
+                callbacks: {
+                    onMixEnd: function(state) {
+                         console.log('reva');
+                         window.bLazy.revalidate();
+                    }
+                }
+            });
+            
+            grid.classList.add('filters-on')
+            filtersTrigger.innerHTML = filtersTrigger.getAttribute('data-hide');
+
+        } else {
+            let mixer = mixitup('.js-mix', {
+                multifilter: {
+                    enable: true
+                },
+                callbacks: {
+                    onMixEnd: function(state) {
+                         window.bLazy.revalidate();
+                    }
+                }
+            });
+        }
+        
+        
+        const checkFiltersPanelHeight = function() {
+            grid.style.minHeight = filtersPanel.clientHeight + 'px';
+        }
+        
+        window.addEventListener('resize', checkFiltersPanelHeight);
+
         
         const toggleFun = function(e) {
             
-            let checkboxes = document.getElementsByName('filter');
-            let status = e.currentTarget.checked;
-
+            const parent = e.currentTarget.parentNode.parentNode;            
+            const checkboxes = parent.querySelectorAll('input');
+            
+            let status = e.currentTarget.checked;            
             
             for (var i = 0, n = checkboxes.length; i < n; i++) {
                 
@@ -32,9 +75,13 @@ document.addEventListener('DOMContentLoaded',function() {
             }
         };
         
-        const toggle = document.getElementsByClassName('js-toggle')[0];
+        const toggle = document.getElementsByClassName('js-toggle');
 
-        toggle.addEventListener('click', toggleFun);    
+        //toggle.addEventListener('click', toggleFun);    
+        
+        for (let j = 0; j < toggle.length; j++) {
+            toggle[j].addEventListener('click', toggleFun);    
+        }
     };
     
     
@@ -63,12 +110,7 @@ document.addEventListener('DOMContentLoaded',function() {
         
         mix();
         
-        //e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
-        
-        
-       
-        
-        
+        //e.preventDefault() ? e.preventDefault() : e.preventDefault = false;  
     };
     
     grid ? init() : false;

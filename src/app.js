@@ -16,4 +16,5 @@ require('./js/search.js');
 //require('./js/mobile-detach.js');
 
 
-//require('./img/photos/l-thumb-0.jpg');
+require('./img/photos/obrys.jpg');
+require('./img/photos/full.jpg');

@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
             
+            document.getElementById('search-form').getElementsByClassName('form-field')[0].focus()
+            
             outside = document.addEventListener('click', clickOutside);
         };
         

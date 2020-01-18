@@ -12,6 +12,16 @@
     @media ( max-width: $smartphone_portrait + px ) {
     	padding: 55px 20px;
     }
+    
+    a {
+        color: $c-primary;
+        
+        &:hover {
+            .desktop & {
+                text-decoration: underline;
+            }
+        }
+    }
 
     .form-row {
         @extend %flex;
@@ -63,6 +73,8 @@
         }
         
         &--submit {
+            @extend %rel;
+
             button {
                 @extend %anim;
                 margin: 60px 0 0 auto;

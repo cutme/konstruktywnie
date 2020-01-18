@@ -17011,7 +17011,25 @@ __webpack_require__("./src/js/carousels.js");
 __webpack_require__("./src/js/nav.js");
 
 __webpack_require__("./src/js/search.js"); //require('./js/mobile-detach.js');
-//require('./img/photos/l-thumb-0.jpg');
+
+
+__webpack_require__("./src/img/photos/obrys.jpg");
+
+__webpack_require__("./src/img/photos/full.jpg");
+
+/***/ }),
+
+/***/ "./src/img/photos/full.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/photos/full.jpg";
+
+/***/ }),
+
+/***/ "./src/img/photos/obrys.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/photos/obrys.jpg";
 
 /***/ }),
 
@@ -20956,14 +20974,52 @@ document.addEventListener('DOMContentLoaded', function () {
   var grid = document.getElementsByClassName('js-grid')[0];
 
   var mix = function mix() {
-    var mixer = mixitup__WEBPACK_IMPORTED_MODULE_0___default()('.js-mix', {
-      multifilter: {
-        enable: true
-      }
-    });
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var spec = urlParams.get('spec');
+    var filtersTrigger = document.getElementsByClassName('js-filtersTrigger')[0];
+    var filtersPanel = document.getElementsByClassName('js-filterspanel')[0];
+
+    if (spec) {
+      var initialFilter = '.' + spec;
+      var mixer = mixitup__WEBPACK_IMPORTED_MODULE_0___default()('.js-mix', {
+        multifilter: {
+          enable: true
+        },
+        load: {
+          filter: initialFilter
+        },
+        callbacks: {
+          onMixEnd: function onMixEnd(state) {
+            console.log('reva');
+            window.bLazy.revalidate();
+          }
+        }
+      });
+      grid.classList.add('filters-on');
+      filtersTrigger.innerHTML = filtersTrigger.getAttribute('data-hide');
+    } else {
+      var _mixer = mixitup__WEBPACK_IMPORTED_MODULE_0___default()('.js-mix', {
+        multifilter: {
+          enable: true
+        },
+        callbacks: {
+          onMixEnd: function onMixEnd(state) {
+            window.bLazy.revalidate();
+          }
+        }
+      });
+    }
+
+    var checkFiltersPanelHeight = function checkFiltersPanelHeight() {
+      grid.style.minHeight = filtersPanel.clientHeight + 'px';
+    };
+
+    window.addEventListener('resize', checkFiltersPanelHeight);
 
     var toggleFun = function toggleFun(e) {
-      var checkboxes = document.getElementsByName('filter');
+      var parent = e.currentTarget.parentNode.parentNode;
+      var checkboxes = parent.querySelectorAll('input');
       var status = e.currentTarget.checked;
 
       for (var i = 0, n = checkboxes.length; i < n; i++) {
@@ -20975,8 +21031,11 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
-    var toggle = document.getElementsByClassName('js-toggle')[0];
-    toggle.addEventListener('click', toggleFun);
+    var toggle = document.getElementsByClassName('js-toggle'); //toggle.addEventListener('click', toggleFun);    
+
+    for (var j = 0; j < toggle.length; j++) {
+      toggle[j].addEventListener('click', toggleFun);
+    }
   };
 
   var init = function init() {
@@ -20993,7 +21052,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     filtersTrigger.addEventListener('click', showHideFilters);
-    mix(); //e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
+    mix(); //e.preventDefault() ? e.preventDefault() : e.preventDefault = false;  
   };
 
   grid ? init() : false;
@@ -21279,6 +21338,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('is-loaded');
     setTimeout(function () {
       cover.remove();
+      document.body.classList.add('start-transitions');
     }, 250); // Anims on inview
 
     setTimeout(function () {
@@ -28723,12 +28783,6 @@ TweenMax_TweenMax._autoActivated = [TimelineLite_TimelineLite, TimelineMax_Timel
 var scrollmagic_plugin_gsap = __webpack_require__("./node_modules/scrollmagic-plugin-gsap/index.js");
 
 // CONCATENATED MODULE: ./src/js/parallax.js
-/*
-import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
-import { TweenMax, TimelineMax } from "gsap"; // Also works with TweenLite and TimelineLite
-import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
-*/
 
 
 
@@ -28744,7 +28798,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var scene = new ScrollMagic_default.a.Scene({
       duration: el.clientHeight,
       triggerHook: 0
-    }).setTween(tween).setPin(".js-homeslider").addTo(controller);
+    }).setTween(tween).setPin(".js-homeslider", {
+      pushFollowers: false
+    }).addTo(controller);
+    /*
+            window.onresize = function() {
+                console.log('z');
+                
+                setTimeout(function() {
+                scene.update(true);
+                scene.refresh();
+                    
+                }, 1)
+            }
+    */
   };
 }, false);
 
@@ -28849,6 +28916,7 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.classList.add('is-visible');
       }, 1);
       e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
+      document.getElementById('search-form').getElementsByClassName('form-field')[0].focus();
       outside = document.addEventListener('click', clickOutside);
     };
 

@@ -1,6 +1,9 @@
 .c-grid {
     @extend %rel;
     min-height: 100vh;
+    .page-template & {
+        min-height: 100vh;
+    }
     //overflow: hidden;
 
     &__content {
@@ -15,9 +18,10 @@
         padding: 0 grid(20);
         overflow: hidden;
         height: 0;
+        
         &.is-visible {
             height: auto;
-            overflow: auto;
+            overflow: visible;
         }
         
         @media ( max-width: $tablet_portrait + px ) {

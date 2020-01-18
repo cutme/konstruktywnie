@@ -64,6 +64,7 @@
                         a {
                             @media ( min-width: $tablet + 1px ) {
                                 background-color: white;
+                                color: $c-primary;
     
                                 &:after, &:before {
                                     opacity: 1;
@@ -81,6 +82,18 @@
                     
                     @media ( min-width: $tablet + 1px ) {
                         border-color: $c-primary;
+                    }
+                }
+            }
+            
+            &:nth-child(2) {
+                a {
+                    .category & {
+                        color: $c-primary;
+                        
+                        @media ( min-width: $tablet + 1px ) {
+                            border-color: $c-primary;
+                        }
                     }
                 }
             }

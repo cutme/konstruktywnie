@@ -1,10 +1,3 @@
-/*
-import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
-import { TweenMax, TimelineMax } from "gsap"; // Also works with TweenLite and TimelineLite
-import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
-*/
-
 import ScrollMagic from 'scrollmagic';
 import TweenMax from "gsap/TweenMax";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
@@ -24,8 +17,25 @@ document.addEventListener('DOMContentLoaded',function() {
     	  triggerHook: 0,
     	})
     	.setTween(tween)
-    	.setPin(".js-homeslider")  
+    	.setPin(".js-homeslider", {
+        pushFollowers: false
+    })  
     	.addTo(controller);
+    	
+/*
+        window.onresize = function() {
+            console.log('z');
+            
+            setTimeout(function() {
+            scene.update(true);
+            scene.refresh();
+                
+            }, 1)
+        }
+*/
+
     };
     
+    
+
 }, false);

@@ -20,7 +20,7 @@ a {
 	text-decoration: none;
 	
 	&:not(.mix) {
-    	.is-loaded & {
+    	.start-transitions & {
             @extend %anim;
         }
     }

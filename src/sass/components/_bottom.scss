@@ -1,5 +1,13 @@
 .c-bottom {
     padding: 5px 0;
+    
+    a {
+        &:hover {
+            .desktop & {
+                color: $c-primary;
+            }
+        }
+    }
 
     p {
         font: {
